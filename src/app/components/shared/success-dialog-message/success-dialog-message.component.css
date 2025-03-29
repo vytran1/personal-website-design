@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  width: auto;
+  max-width: 400px;
+}
+
+.custom-dialog .mat-mdc-dialog-container {
+  width: auto !important; /* Không chiếm toàn bộ màn hình */
+  max-width: 400px !important; /* Giới hạn chiều rộng */
+  max-height: 80vh !important; /* Giới hạn chiều cao */
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+}
+.dialog-backdrop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

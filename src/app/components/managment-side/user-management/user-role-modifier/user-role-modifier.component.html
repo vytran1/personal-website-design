@@ -1,0 +1,18 @@
+<h1>Modifier Role Of User {{ userId }}</h1>
+
+<!--Table For Owned Roles-->
+<h2>Owned Roles</h2>
+<app-owned-role-table
+  [ownedRoles]="ownedRoles"
+  [userId]="userId"
+  (deleteUserRoleEmitter)="deleteRole($event)"
+></app-owned-role-table>
+
+<h2>All Roles In System</h2>
+<app-not-owned-role-table
+  [notOwnedRoles]="notOwnedRoles"
+  [userId]="userId"
+  (roleEmitter)="addNewRole($event)"
+></app-not-owned-role-table>
+
+<button (click)="updateNewRoles()">Save</button>

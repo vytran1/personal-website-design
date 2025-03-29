@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="sidebar">
+    <ul>
+      <li>
+        <a
+          routerLink="users"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: false }"
+          >User Management</a
+        >
+      </li>
+      <li>
+        <a routerLink="roles" routerLinkActive="active">Roles Management</a>
+      </li>
+    </ul>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

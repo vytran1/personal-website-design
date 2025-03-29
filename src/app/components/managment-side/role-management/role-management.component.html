@@ -1,0 +1,30 @@
+<button (click)="redirectToCreateRoleForm()">CREATE NEW ROLE</button>
+@if(roles.length > 0){
+<table>
+  <thead>
+    <td>Role Id</td>
+    <td>Role Name</td>
+    <td>Behavior</td>
+  </thead>
+  <tbody>
+    @for (item of roles; track $index) {
+    <tr>
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>
+        <button
+          [disabled]="isProcessingDelete"
+          (click)="openWarningDialog(item.id!)"
+        >
+          DELETE
+        </button>
+
+        <button (click)="redirectToRolePermissionModifier(item.id!)">
+          MODIFY
+        </button>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+}

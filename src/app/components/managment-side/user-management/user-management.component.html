@@ -1,0 +1,36 @@
+@if(users.length > 0){
+<table>
+  <thead>
+    <th>User Id</th>
+    <th>User Email</th>
+    <th>User Authentication Type</th>
+    <th>User Roles</th>
+    <th>Behavior</th>
+  </thead>
+  <tbody>
+    @for (item of users; track $index) {
+    <tr>
+      <td>{{ item.id }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.provider }}</td>
+      <td>
+        @for (role of item.roles; track $index) {
+        <span>{{ role.name }}</span>
+        }
+      </td>
+      <td>
+        @if(isSuperAdmin){
+        <button>DELETE</button>
+        } @if(isSuperAdmin){
+        <button (click)="redirectToUserRoleModifer(item.id)">EDIT</button>
+        }
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+}@else{
+<p>No users found.</p>
+}
+
+<router-outlet></router-outlet>

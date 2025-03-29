@@ -1,0 +1,22 @@
+@if(ownedPermission.length > 0){
+<table>
+  <thead>
+    <th>Permission ID</th>
+    <th>Permission Name</th>
+    <th>Behavior</th>
+  </thead>
+  <tbody>
+    @for (item of ownedPermission; track $index) {
+    <tr>
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>
+        <button (click)="deletePermission(item)">DELETE</button>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+}@else {
+<p>No permissions found.</p>
+}

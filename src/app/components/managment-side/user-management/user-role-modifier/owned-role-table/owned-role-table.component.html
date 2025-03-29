@@ -1,0 +1,23 @@
+@if (ownedRoles.length > 0) {
+
+<table>
+  <thead>
+    <th>Role Id</th>
+    <th>Role name</th>
+    <th></th>
+  </thead>
+  <tbody>
+    @for (item of ownedRoles; track $index) {
+    <tr>
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>
+        <button (click)="deleteUserRole(item)">DELETE</button>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+}@else {
+<p>No roles assigned</p>
+}

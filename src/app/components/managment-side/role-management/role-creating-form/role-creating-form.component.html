@@ -1,0 +1,27 @@
+<h1>CREATING NEW ROLE</h1>
+<form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label for="name">Role Name:</label>
+  <input type="text" id="name" name="name" formControlName="name" />
+  @if(form.get('name').invalid && form.get('name').touched){
+  <!--Validator-->
+  <div class="error-message">
+    @if(form.get('name').errors?.['required']){
+    <p>Role Name is required</p>
+    } @if(form.get('name').errors?.['minlength']){
+    <p>Role Name must contain at least 10 characters</p>
+    } @if(form.get('name').errors?.['roleNameExist']){
+    <p>This role name has already existed in the system</p>
+    }
+  </div>
+  <!---->
+  }
+  <label for="description">Description</label>
+  <input
+    type="text"
+    id="description"
+    name="description"
+    formControlName="description"
+  />
+  <button [disabled]="form.invalid || isProcessing">CREATE</button>
+  <button>CANCEL</button>
+</form>

@@ -1,0 +1,13 @@
+# Bỏ thư mục node_modules để tránh copy vào container
+node_modules
+coverage
+
+# Bỏ các file hệ thống, IDE và cache
+.DS_Store
+.git
+.gitignore
+.env
+.vscode
+.idea
+npm-debug.log
+yarn-error.log

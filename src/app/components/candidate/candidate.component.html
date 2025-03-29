@@ -1,0 +1,13 @@
+<h1>My Information</h1>
+<h1>Full Name {{ candidate?.firstName }} {{ candidate?.lastName }}</h1>
+<h1>Address: {{ candidate?.address }}</h1>
+<h1>Phone Number: {{ candidate?.phoneNumber }}</h1>
+
+<h1>--Certificates--</h1>
+@for (item of certificate; track $index; let idx = $index) {
+<h1>{{ idx + 1 }}</h1>
+<h1>{{ item.name }}</h1>
+<h1>{{ item.description }}</h1>
+}
+
+<button>LogOut</button>

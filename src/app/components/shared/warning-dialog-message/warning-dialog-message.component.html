@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Warning</h2>
+<mat-dialog-content>
+  <p>{{ data.message }}</p>
+</mat-dialog-content>
+<mat-dialog-actions class="dialog-actions">
+  <button mat-button color="primary" (click)="onConfirm()">OK</button>
+  <button mat-button color="warn" (click)="onCancel()">Cancel</button>
+</mat-dialog-actions>

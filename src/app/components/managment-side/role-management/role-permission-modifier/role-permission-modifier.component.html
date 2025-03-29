@@ -1,0 +1,18 @@
+<h1>Modify Permission Role {{ roleId }}</h1>
+
+<h2>Current Owned Permissions</h2>
+<app-role-permission-owned
+  [ownedPermission]="ownedPermission"
+  (deletePermissionEmitter)="deletePermissionHandler($event)"
+></app-role-permission-owned>
+
+<h2>Permission In The System</h2>
+<app-role-permission-not-owned
+  [permissionInTheSystem]="notOwnedPermission"
+  (addPermissionEmitter)="addPermissionHandler($event)"
+>
+</app-role-permission-not-owned>
+
+<button (click)="updatePermissionOfRole()" [disabled]="isProcessing">
+  SAVE
+</button>

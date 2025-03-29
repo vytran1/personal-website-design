@@ -1,0 +1,23 @@
+@if (notOwnedRoles.length > 0) {
+
+<table>
+  <thead>
+    <th>Role Id</th>
+    <th>Role name</th>
+    <th></th>
+  </thead>
+  <tbody>
+    @for (item of notOwnedRoles; track $index) {
+    <tr>
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>
+        <button (click)="addRole(item)">ADD</button>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+}@else {
+<p>No roles found</p>
+}
