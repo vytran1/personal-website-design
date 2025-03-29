@@ -18,7 +18,7 @@ public class GetAllCandidateEndpoint {
         this.jMediator = jMediator;
     }
 
-    @GetMapping("")
+    @GetMapping("/all")
     public ResponseEntity<?> getAllCandidate(
             @RequestParam(defaultValue = "1") Integer pageNum,
             @RequestParam(defaultValue = "2") Integer pageSize,

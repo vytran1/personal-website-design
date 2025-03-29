@@ -1,63 +1,20 @@
-package com.personalinformation.vta.entities;
-
-import jakarta.persistence.*;
+package com.personalinformation.vta.features.candidate;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.util.Date;
 
+public class CandidateDTO {
 
-//@Entity
-//@Table(name = "candidate")
-public class Candidate {
-
-
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "id")
-    private Integer id;
-
-//    @Column(name = "first_name", length = 30, nullable = false)
     private String firstName;
-
-//    @Column(name = "last_name", length = 30, nullable = false)
     private String lastName;
-
-//    @Column(name = "address", length = 60, nullable = false)
     private String address;
-
-//    @Column(name = "phone_number", length = 11, nullable = false)
     private String phoneNumber;
-
-//    @Column(name = "email", length = 50, nullable = false, unique = true)
     private String email;
-
-//    @Column(name = "image", length = 50)
-    private String image;
-
-//    @Column(name = "dob")
     private LocalDate dob;
-
-//    @Column(name = "short_description", length = 150, nullable = false)
     private String shortDescription;
-
-//    @Column(name = "long_description", length = 250, nullable = false)
     private String longDescription;
 
-    private List<Certificate> certificates;
-
-    public Candidate() {
-    }
-
-    public Candidate(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+    public CandidateDTO() {
     }
 
     public String getFirstName() {
@@ -100,14 +57,6 @@ public class Candidate {
         this.email = email;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
     public LocalDate getDob() {
         return dob;
     }
@@ -130,17 +79,5 @@ public class Candidate {
 
     public void setLongDescription(String longDescription) {
         this.longDescription = longDescription;
-    }
-
-    public List<Certificate> getCertificates() {
-        return certificates;
-    }
-
-    public void setCertificates(List<Certificate> certificates) {
-        this.certificates = certificates;
-    }
-
-    public String getFullName(){
-        return this.firstName + " " + this.lastName;
     }
 }
